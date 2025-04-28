@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EditorEnum : MonoBehaviour
 {
-	public enum BGType
-	{
-		Stadium,
-		Limousine,
-		Beach
-	}
 	
+}
+public enum BGType
+{
+	Stadium,
+	Limousine,
+	Beach
 }

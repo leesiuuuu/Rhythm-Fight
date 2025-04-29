@@ -5,10 +5,10 @@ public class DataManager
 {
 	public void CreateFileData(string filePath, string name, string composer, bool Easy, bool Normal, bool Hard, bool RealFight)
 	{
-		string path = filePath;
+		string path = filePath + "Info.json";
 		FileData InitData = new FileData(name, composer, Easy, Normal, Hard, RealFight);
 		
-		string jsonInit = JsonUtility.ToJson(InitData);
+		string jsonInit = JsonUtility.ToJson(InitData, true);
 
 		SaveJsonFile(path, jsonInit);
 	}

@@ -11,6 +11,8 @@ public class DataManager
 		string jsonInit = JsonUtility.ToJson(InitData, true);
 
 		SaveJsonFile(path, jsonInit);
+
+		EditorManager.Instance.SetFile(InitData);
 	}
 
 	private void SaveJsonFile(string filePath, string jsonData)
@@ -20,7 +22,7 @@ public class DataManager
 	}
 }
 [System.Serializable]
-class FileData
+public class FileData
 {
 	public string name;
 	public string composer;

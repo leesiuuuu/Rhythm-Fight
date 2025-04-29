@@ -1,6 +1,4 @@
-using System.IO;
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class EditorManager : MonoBehaviour
 {

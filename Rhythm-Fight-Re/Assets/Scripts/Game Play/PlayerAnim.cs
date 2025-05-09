@@ -1,12 +1,19 @@
 using UnityEngine;
 
-public class PlayerAnim : MonoBehaviour
+public class PlayerAnim : PlayerManager
 {
-	bool dir = false;
-	public void PlayAnim(Animator animator)
+	public void PlayAnim(Animator animator, PunchType punchType)
 	{
-		if (!dir) animator.SetTrigger("PunchLeft");
-		else animator.SetTrigger("PunchRight");
-		dir = !dir;
+		switch (punchType)
+		{
+			case PunchType.LPL:
+				animator.SetTrigger("LPL"); break;
+			case PunchType.LPR:
+				animator.SetTrigger("LPR"); break;
+			case PunchType.RPL:
+				animator.SetTrigger("RPL"); break;
+			case PunchType.RPR:
+				animator.SetTrigger("RPR"); break;
+		}
 	}
 }

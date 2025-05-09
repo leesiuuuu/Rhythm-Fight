@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public enum PunchType
 {
-    private Animator animator;
+	LPR,
+	LPL,
+	RPR,
+	RPL
+}
 
-	private PlayerAnim playerAnim;
+public class PlayerInput : PlayerManager
+{
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
@@ -15,6 +20,29 @@ public class PlayerInput : MonoBehaviour
 
 	void Update()
     {
-		if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F)) playerAnim.PlayAnim(animator);
+		if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
+		{
+			if(LPunchCnt == 0)
+			{
+				playerAnim.PlayAnim(animator, PunchType.LPL);
+			}
+			else
+			{
+				playerAnim.PlayAnim(animator, PunchType.LPR);
+			}
+			LPunchCnt = ++LPunchCnt % 2;
+		}
+		if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K))
+		{
+			if (RPunchCnt == 0)
+			{
+				playerAnim.PlayAnim(animator, PunchType.RPL);
+			}
+			else
+			{
+				playerAnim.PlayAnim(animator, PunchType.RPR);
+			}
+			RPunchCnt = ++RPunchCnt % 2;
+		}
     }
 }

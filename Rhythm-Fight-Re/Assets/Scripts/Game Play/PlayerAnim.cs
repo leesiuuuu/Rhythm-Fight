@@ -16,4 +16,8 @@ public class PlayerAnim : PlayerManager
 				animator.SetTrigger("RPR"); break;
 		}
 	}
+	public void upperCut(Animator animator)
+	{
+		animator.SetTrigger("Up");
+	}
 }

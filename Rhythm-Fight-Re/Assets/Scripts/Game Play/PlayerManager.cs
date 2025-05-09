@@ -11,9 +11,5 @@ public class PlayerManager : MonoBehaviour
 	protected PlayerAnim playerAnim;
 
 	protected Animator animator;
-	private void Start()
-	{
-		animator = GetComponent<Animator>();
-		playerAnim = GetComponent<PlayerAnim>();
-	}
+
 }

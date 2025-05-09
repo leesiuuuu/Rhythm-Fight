@@ -44,5 +44,9 @@ public class PlayerInput : PlayerManager
 			}
 			RPunchCnt = ++RPunchCnt % 2;
 		}
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			playerAnim.upperCut(animator);
+		}
     }
 }

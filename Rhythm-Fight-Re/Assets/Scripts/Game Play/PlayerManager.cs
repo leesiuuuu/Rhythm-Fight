@@ -10,6 +10,8 @@ public class PlayerManager : MonoBehaviour
 	protected PlayerInput playerInput;
 	protected PlayerAnim playerAnim;
 
+	protected NoteCheck noteCheck;
+
 	protected Animator animator;
 
 }
